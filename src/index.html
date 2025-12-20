@@ -1,17 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Christmas, Dan!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
 </head>
+  <body>
+  <div class="snow" aria-hidden="true" id="snow"></div>
 
-<body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
+  <main class="card" aria-labelledby="title">
+    <header class="header">
+      <h1 id="title">Merry Christmas, Dan</h1>
+      <h2>Wishing you joy, rest, and a brilliant new year</h2>
+
+      <div class="lights" aria-hidden="true">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="greeting">
+        <p><strong>Hey Dan,</strong></p>
+        <p>
+          This wee page is just for you — a quiet corner on the web to say
+          thanks, send some Christmas cheer, and wish you all the good things for the year ahead.
+        </p>
+        <p>
+          We all appreciate your hard work and dedication and thank you for helping us all.
+        </p>
+        <p class="signature">
+          With very best wishes at Christmas and into the new year.
+        </p>
+      </div>
+
+      <div class="tree-wrapper" aria-hidden="true">
+        <div class="tree">
+          <div class="tree-layer"></div>
+          <div class="tree-layer"></div>
+          <div class="tree-layer"></div>
+
+          <div class="star"></div>
+
+          <div class="bauble"></div>
+          <div class="bauble"></div>
+          <div class="bauble"></div>
+          <div class="bauble"></div>
+          <div class="bauble"></div>
+
+          <div class="tree-trunk"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <span class="tag-pill">Made with a bit of Christmas magic</span>
+      </div>
+      <button class="play-button" type="button" id="musicToggle">
+        <span>♪</span>
+        Play festive vibes
+      </button>
+      <span class="sr-only" id="musicStatus" aria-live="polite"></span>
+    </footer>
+
+    <!-- Optional: add your own music file called christmas.mp3 in the same folder -->
+    <audio id="music" loop>
+      <source src="https://youtu.be/3-m2nmCSpzU?list=RD3-m2nmCSpzU" type="audio/mpeg">
+      <!--
+        To enable music, drop a file called "christmas.mp3" alongside this HTML file,
+        then add:
+        <source src="christmas.mp3" type="audio/mpeg">
+      -->
+    </audio>
   </main>
-</body>
 
+  <script>
+    // Simple, decorative snow generator
+    const snowContainer = document.getElementById("snow");
+    const snowflakeCount = 50;
+
+    for (let i = 0; i < snowflakeCount; i++) {
+      const snowflake = document.createElement("div");
+      snowflake.className = "snowflake";
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.animationDuration = 10 + Math.random() * 12 + "s";
+      snowflake.style.animationDelay = Math.random() * -20 + "s";
+      snowflake.style.opacity = (0.5 + Math.random() * 0.5).toString();
+      snowContainer.appendChild(snowflake);
+    }
+
+    // Music toggle (non-essential, works only if you add a file)
+    const music = document.getElementById("music");
+    const toggle = document.getElementById("musicToggle");
+    const status = document.getElementById("musicStatus");
+    let isPlaying = false;
+
+    toggle.addEventListener("click", async () => {
+      if (!music.src) {
+        status.textContent = "Music file not found, but the wishes still stand.";
+        return;
+      }
+
+      try {
+        if (isPlaying) {
+          await music.pause();
+          isPlaying = false;
+          toggle.textContent = "♪ Play festive vibes";
+          status.textContent = "Music paused.";
+        } else {
+          await music.play();
+          isPlaying = true;
+          toggle.textContent = "❚❚ Pause festive vibes";
+          status.textContent = "Music playing.";
+        }
+      } catch (e) {
+        status.textContent = "Could not play music, but the Christmas spirit remains.";
+      }
+    });
+  </script>
+</body>
 </html>
