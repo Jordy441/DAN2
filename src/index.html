@@ -95,10 +95,7 @@
       </div>
     </header>
 
-    <section class="content">
-      <div class="greeting">
-        <p><strong>Hey Dan,</strong></p>
-        <p>
+    
           
 
       <div class="tree-wrapper" aria-hidden="true">
@@ -150,22 +147,9 @@
         return;
       }
 
-      try {
-        if (isPlaying) {
-          await music.pause();
-          isPlaying = false;
-          toggle.textContent = "♪ Play festive vibes";
-          status.textContent = "Music paused.";
-        } else {
-          await music.play();
-          isPlaying = true;
-          toggle.textContent = "❚❚ Pause festive vibes";
-          status.textContent = "Music playing.";
-        }
-      } catch (e) {
-        status.textContent = "Could not play music, but the Christmas spirit remains.";
+  
       }
-    });
+    
   </script>
    </body>
 </html>
