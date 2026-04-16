@@ -1,114 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Merry Christmas, Dan!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="profile-pic">
-  <img src="lego.jpg" alt="Profile photo">
-</div>
-
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You Card</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-  <body>
-  <div class="snow" aria-hidden="true" id="snow"></div>
-
-  <main class="card" aria-labelledby="title">
-    <header class="header">
-      <h1 id="title">Merry Christmas, Dan</h1>
-      <h2>Keep'er Lit mate!!</h2>
-
-      <div class="lights" aria-hidden="true">
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-      </div>
-    </header>
-
-    <section class="content">
-      <div class="greeting">
-        <p><strong>Hey Dan,</strong></p>
-        <p>
-          This wee page is just to THANK YOU for everything and wish you all the good things for the year ahead.
-        </p>
-        <p>
-          We all appreciate your hard work and dedication and thank you for helping us all.
-        </p>
-        <p class="signature">
-          With very best wishes at Christmas and into the new year. From Jordy.
-        </p>
-      </div>
-
-      <div class="tree-wrapper" aria-hidden="true">
-        <div class="tree">
-          <div class="tree-layer"></div>
-          <div class="tree-layer"></div>
-          <div class="tree-layer"></div>
-
-          <div class="star"></div>
-
-          <div class="bauble"></div>
-          <div class="bauble"></div>
-          <div class="bauble"></div>
-          <div class="bauble"></div>
-          <div class="bauble"></div>
-
-          <div class="tree-trunk"></div>
-        </div>
-      </div>
-    </section>
-
-   
-
-
-      <div class="lights" aria-hidden="true">
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-      </div>
-    </header>
-
-    
-          
-
-      
-
-    
-
-  <script>
-    // Simple, decorative snow generator
-    const snowContainer = document.getElementById("snow");
-    const snowflakeCount = 50;
-
-    for (let i = 0; i < snowflakeCount; i++) {
-      const snowflake = document.createElement("div");
-      snowflake.className = "snowflake";
-      snowflake.style.left = Math.random() * 100 + "vw";
-      snowflake.style.animationDuration = 10 + Math.random() * 12 + "s";
-      snowflake.style.animationDelay = Math.random() * -20 + "s";
-      snowflake.style.opacity = (0.5 + Math.random() * 0.5).toString();
-      snowContainer.appendChild(snowflake);
-    }
-
-    // Music toggle (non-essential, works only if you add a file)
-    const music = document.getElementById("music");
-    const toggle = document.getElementById("musicToggle");
-    const status = document.getElementById("musicStatus");
-    let isPlaying = false;
-
-    
-
-  
-    
-    
-  </script>
-   </body>
+<body>
+  <div class="card">
+    <h1>Thank You</h1>
+    <p>
+      Your support means the world.  
+      I truly appreciate your time, kindness, and encouragement.
+    </p>
+    <div class="signature">— Jordan</div>
+  </div>
+</body>
 </html>
